@@ -21,9 +21,9 @@
         <button ion-button block color="danger" (click)="b(0)">STOP</button>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let e of strategies">
-      <ion-col>
-        <button ion-button block (click)="b(e.n)">{{ e.name }}</button>
+    <ion-row responsive-sm wrap>
+      <ion-col col-4 *ngFor="let e of strategies">
+        <button ion-button block large class="largebtn" (click)="b(e.n)">{{ e.name }}</button>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -1,26 +1,10 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Robonitor
 
-## How to use this template
+Robot Monitor and Control App
+Merges other team's apps
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
-
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+* :heavy_check_mark: Strategy Selector
+* :black_medium_small_square: Moainitor
+* :black_medium_small_square: Monitracer
+* :black_medium_small_square: Rozeta
+* :black_medium_small_square: Pepita

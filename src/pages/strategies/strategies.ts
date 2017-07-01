@@ -15,26 +15,26 @@ export class StrategiesPage {
   devices: Array<{name: string, mac: string}>;
 
   constructor(public navCtrl: NavController, private bt: BluetoothSerial, private loadingCtrl: LoadingController, private toastCtrl: ToastController, private alertCtrl: AlertController) {
-    // this.bt.enable().then(() => {
-    //   console.log("BT enabled!");
-    // }, () => {
-    //   console.log("BT not enabled");
-    // });
+    this.bt.enable().then(() => {
+      console.log("BT enabled!");
+    }, () => {
+      console.log("BT not enabled");
+    });
 
-    // this.bt.subscribe('\n').subscribe((data) => {
-    //   console.log("Received: " + data);
-    // })
+    this.bt.subscribe('\n').subscribe((data) => {
+      console.log("Received: " + data);
+    })
 
     this.strategies = [];
     for (let i = 1; i <= 24; i++) {
       this.strategies.push(
-        { name: "Est " + String(i), n: i }
+        { name: String(i), n: i }
       );
     }
 
     this.devices = [
-      { name: "Pepita",      mac: "00:80:E1:B7:EE:F0" },
-      { name: "HC06-MarcoW", mac: "20:16:05:19:17:79" }
+      { name: "Pepita (Amped Up)", mac: "00:80:E1:B7:EE:F0" },
+      { name: "HC06-MarcoW",       mac: "20:16:05:19:17:79" }
     ];
   }
 
@@ -75,8 +75,8 @@ export class StrategiesPage {
 
   connect(): void {
     if (this.bt.isConnected()) {
-      console.log("Connected");
-      // this.disconnect();
+      // console.log("Connected");
+      this.disconnect();
     }
 
     let loading = this.loadingCtrl.create({

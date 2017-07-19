@@ -6,6 +6,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 import { HomePage } from '../pages/home/home';
 import { StrategiesPage } from '../pages/strategies/strategies';
+import { JoystickPage } from '../pages/joystick/joystick';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,8 +28,9 @@ export class MyApp {
     });
 
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Strategy Selector', component: StrategiesPage }
+      { title: 'Home',              component: HomePage },
+      { title: 'Strategy Selector', component: StrategiesPage },
+      { title: 'Joystick',          component: JoystickPage }
     ];
   }
 

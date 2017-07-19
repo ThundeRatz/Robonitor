@@ -9,11 +9,13 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StrategiesPage } from '../pages/strategies/strategies';
+import { JoystickPage } from '../pages/joystick/joystick';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    JoystickPage,
     StrategiesPage
   ],
   imports: [
@@ -24,6 +26,7 @@ import { StrategiesPage } from '../pages/strategies/strategies';
   entryComponents: [
     MyApp,
     HomePage,
+    JoystickPage,
     StrategiesPage
   ],
   providers: [

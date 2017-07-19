@@ -1,0 +1,12 @@
+page-joystick {
+  #zoneJoystick {
+    height: 100vw;
+    border-bottom: 1px map-get($colors, primary) solid;
+  }
+
+  .coord {
+    text-align: center;
+    font-size: 300%;
+    color: map-get($colors, primary);
+  }
+}

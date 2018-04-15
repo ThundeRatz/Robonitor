@@ -12,7 +12,7 @@ export class StrategiesPage {
   mac: string;
   strategies: Array<{name: string, n: number}>;
 
-  devices: Array<{name: string, mac: string}>;
+  devices: Array<{name: string, address: string, id: string, class: number}>;
 
   constructor(public navCtrl: NavController, private bt: BluetoothSerial, private loadingCtrl: LoadingController, private toastCtrl: ToastController, private alertCtrl: AlertController) {
     this.bt.enable().then(() => {
@@ -20,10 +20,6 @@ export class StrategiesPage {
     }, () => {
       console.log("BT not enabled");
     });
-
-    this.bt.subscribe('\n').subscribe((data) => {
-      console.log("Received: " + data);
-    })
 
     this.strategies = [];
     for (let i = 1; i <= 24; i++) {
@@ -33,16 +29,17 @@ export class StrategiesPage {
     }
 
     this.devices = [
-      { name: "Pepita (Amped Up)", mac: "00:80:E1:B7:EE:F0" },
-      { name: "HC-06",             mac: "30:14:08:26:01:17" },
-      { name: "HC06-MarcoW",       mac: "20:16:05:19:17:79" }
+      { name: "Pepita Velho (Amped Up)", address: "00:80:E1:B7:EE:F0", id: "", class: 0 },
+      { name: "HC-06",                   address: "30:14:08:26:01:17", id: "", class: 0 },
+      { name: "HC06-MarcoW",             address: "20:16:05:19:17:79", id: "", class: 0 },
     ];
   }
 
   show_devices(): void {
-    // this.bt.list().then((list) => {
-      // console.log("Listing");
-      // console.log(list);
+    this.bt.list().then((list) => {
+      console.log("Listing");
+      console.log(list);
+      this.devices = this.devices.concat(list);
 
       let alert = this.alertCtrl.create();
       alert.setTitle('BTs dos Robôs');
@@ -51,7 +48,7 @@ export class StrategiesPage {
         alert.addInput({
           type: 'radio',
           label: dev.name,
-          value: dev.mac
+          value: dev.address
         });
       }
 
@@ -66,12 +63,12 @@ export class StrategiesPage {
 
       alert.present();
 
-    // }, (err) => {
-    //   this.toastCtrl.create({
-    //     message: 'Falha em listar dispositivos',
-    //     duration: 3000
-    //   }).present();
-    // })
+    }, (err) => {
+      this.toastCtrl.create({
+        message: 'Falha em listar dispositivos',
+        duration: 3000
+      }).present();
+    })
   }
 
   connect(): void {

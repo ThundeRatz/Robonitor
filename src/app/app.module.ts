@@ -10,13 +10,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { StrategiesPage } from '../pages/strategies/strategies';
 import { JoystickPage } from '../pages/joystick/joystick';
+import { MonitracerPage } from '../pages/monitracer/monitracer';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     JoystickPage,
-    StrategiesPage
+    StrategiesPage,
+    MonitracerPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { JoystickPage } from '../pages/joystick/joystick';
     MyApp,
     HomePage,
     JoystickPage,
-    StrategiesPage
+    StrategiesPage,
+    MonitracerPage
   ],
   providers: [
     StatusBar,

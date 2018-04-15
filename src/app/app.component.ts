@@ -7,6 +7,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { HomePage } from '../pages/home/home';
 import { StrategiesPage } from '../pages/strategies/strategies';
 import { JoystickPage } from '../pages/joystick/joystick';
+import { MonitracerPage } from '../pages/monitracer/monitracer';
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +23,6 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
       splashScreen.hide();
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     });
@@ -30,7 +30,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home',              component: HomePage },
       { title: 'Strategy Selector', component: StrategiesPage },
-      { title: 'Joystick',          component: JoystickPage }
+      { title: 'Monitracer',        component: MonitracerPage },
+      { title: 'Joystick',          component: JoystickPage },
     ];
   }
 
@@ -40,4 +41,3 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
-

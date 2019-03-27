@@ -1,0 +1,6 @@
+{
+  "appId": "org.thunderatz.robonitor",
+  "appName": "robonitor",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

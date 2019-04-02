@@ -1,14 +1,43 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header no-border>
+  <ion-toolbar class="home-toolbar" mode="ios" color="primary">
     <ion-title>
-      Ionic Blank
+      Robonitor
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content class="homepage">
+  <div class="container" #container>
+    <div class="btn-wrapper">
+      <div class="btn" (click)="strategies()">
+        <div [innerHTML]="strategiessvg"></div>
+
+        <div id="strategies-bot" class="robot-img">
+          <img src="assets/tracer.png" alt="" />
+        </div>
+
+        <span class="btn-name">Strategies</span>
+      </div>
+    </div>
+
+    <div class="btn-wrapper">
+      <div class="btn" (click)="monitracer()">
+        <div [innerHTML]="tracersvg"></div>
+
+        <div id="monitracer-bot" class="robot-img">
+          <img src="assets/tracer.png" alt="" />
+        </div>
+
+        <span class="btn-name">Monitracer</span>
+      </div>
+    </div>
   </div>
 </ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar color="primary" style="text-align: center">
+    <ion-title color="secondary">
+      ThundeRatz
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">robonitor</string>
+    <string name="title_activity_main">robonitor</string>
+    <string name="package_name">org.thunderatz.robonitor</string>
+    <string name="fileprovider_authority">org.thunderatz.robonitor.fileprovider</string>
+    <string name="custom_url_scheme">org.thunderatz.robonitor</string>
+</resources>
